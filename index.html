@@ -17,15 +17,30 @@
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="phirePhiter.newPerson.firstName" placeholder="First Name"/>
         </div>
+        <div class="form-group col-md-6">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" class="form-control" ng-model="phirePhiter.newPerson.lastName" placeholder="Last Name"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="shoutout">shoutout</label>
+          <input type="text" name="shoutout" class="form-control" ng-model="phirePhiter.newPerson.shoutout" placeholder="Shoutout"/>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="git_username">shoutout</label>
+          <input type="text" name="git_username" class="form-control" ng-href="phirePhiter.newPerson.git_username" placeholder="git_username"/>
+        </div>
+        <button ng-click="phirePhiter.createPerson()">Add New PhirePhiter</button>
+
         <!-- What other fields do we need to ask for in order to get the information we need? -->
       </form>
     </section>
     <section class="container">
       <h3>Class List</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat=""> <!-- What needs to be repeated? -->
+        <li ng-repeat="thing in phirePhiter.people"class="list-group-item"> <!-- What needs to be repeated? -->
           <!-- TODO: Create a list item for everyone in the class -->
-          {{person.firstName}}<!-- include the other parameters for the person -->
+          {{thing.firstName}}     {{thing.lastName}}- has the shoutout-    - {{thing.shoutout}}- on github @-     <a id="link-3" ng-href="{{'https://github.com/'+ thing.git_username}}">
+           www.github/{{thing.git_username}}<!-- include the other parameters for the person -->
         </li>
       </ul>
     </section>
